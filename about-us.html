@@ -56,7 +56,7 @@
 					<header class="major">
 						<h1>About Us</h1>
 					</header>
-					<span class="image main"><img src="images/about-fullscreen-1-1920x700.jpg" alt="" /></span>
+					<span class="image main"><img id="dynamicImage" src="images/about-us/1.jpg" alt="" /></span>
 					<p>The University of Moratuwa is Sri Lanka's top state university for technology, offering programs
 						in
 						engineering, architecture, ICT, business, and medicine. It supports the nation's youth in higher
@@ -108,6 +108,27 @@
 	</div>
 
 	<!-- Scripts -->
+	<script>
+		// Array of image URLs to cycle through
+		const imageUrls = [
+
+			'images/about-us/2.jpg',
+			'images/about-us/3.jpg',
+			'images/about-us/4.jpg',
+			'images/about-us/5.jpg',
+			'images/about-us/6.jpg',
+			'images/about-us/1.jpg',
+		];
+
+		const imageElement = document.getElementById('dynamicImage');
+		let currentIndex = 0;
+
+		function changeImage() {
+			imageElement.src = imageUrls[currentIndex];
+			currentIndex = (currentIndex + 1) % imageUrls.length;
+		}
+		setInterval(changeImage, 3500);
+	</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

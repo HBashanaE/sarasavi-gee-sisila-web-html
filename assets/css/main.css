@@ -2435,6 +2435,7 @@ body.is-menu-visible #menu .inner {
 	transform: none;
 	opacity: 1;
 	visibility: visible;
+	overflow: hidden;
 }
 
 .img-responsive {

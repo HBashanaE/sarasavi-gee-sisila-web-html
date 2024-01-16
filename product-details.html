@@ -55,22 +55,35 @@
 			<section id="one">
 				<div class="inner">
 					<header class="major">
-						<h1>Lorem ipsum dolor sit amet.</h1>
+						<h1>Purchase Tickets</h1>
 					</header>
 
 					<div class="row">
 						<div class="col-md-5">
-							<img src="images/product-1-720x480.jpg" class="img-responsive" alt="">
+							<img src="images/purchase.jpg" class="img-responsive" alt="">
 						</div>
 
 						<div class="col-md-7">
-							<h2><del>$99.00</del> $79.00</h2>
+							<h2 id="ticket-price">Rs. 6000</h2>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, iste neque, ut
-								recusandae quibusdam perferendis qui modi aliquam quaerat molestiae.</p>
+							<p></p>
 
 							<div class="row">
+								<div class="col-sm-4">
+									<label class="control-label">Choose Tickets</label>
 
+									<div class="form-group">
+										<select id="ticket-type" onchange="updateTicketPrice()">
+											<option value="0">VIP</option>
+											<option value="1">Class A</option>
+											<option value="2">Class B</option>
+											<option value="3">Class C</option>
+											<option value="4">Class D</option>
+										</select>
+									</div>
+
+
+								</div>
 
 								<div class="col-sm-8">
 									<label class="control-label">Quantity</label>
@@ -82,27 +95,25 @@
 											</div>
 										</div>
 
+									</div>
+
+									<div class="row">
 										<div class="col-sm-6">
-											<button type="submit" id="payhere-payment">PayHere Pay</button>
+											<button>Purchase</button>
 										</div>
 									</div>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
 
 					<br>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, soluta, odio. Dicta suscipit
-						sapiente, hic quas, itaque obcaecati possimus reprehenderit excepturi facere quis, molestias
-						ipsum unde. At suscipit, beatae tempora!</p>
+					<p></p>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga numquam voluptas tenetur
-						voluptatum consequatur non officiis, repudiandae laudantium deleniti dolor dignissimos ducimus
-						animi ipsum magni reprehenderit nesciunt dolorem, commodi deserunt architecto ipsa! Eos iusto
-						repellat hic labore magni necessitatibus deserunt reprehenderit ut, fuga voluptatum, possimus
-						fugit dignissimos harum culpa inventore in consequuntur. Reprehenderit fugiat in, molestiae
-						iste. Dicta, optio, pariatur.</p>
+					<p></p>
 
 				</div>
 			</section>
@@ -132,6 +143,47 @@
 	</div>
 
 	<!-- Scripts -->
+	<script>
+		function getQueryParam(name) {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(name);
+		}
+
+		function updateTicketPriceOnLoad() {
+			const ticketTypeSelect = document.getElementById("ticket-type");
+			const ticketTypeQueryParam = getQueryParam("ticketType");
+
+			// Call the function to update ticket price
+			updateTicketPriceBasedOnType(ticketTypeQueryParam);
+		}
+
+		function updateTicketPrice() {
+			const ticketTypeSelect = document.getElementById("ticket-type");
+
+			// Call the function to update ticket price
+			updateTicketPriceBasedOnType(undefined);
+		}
+
+		function updateTicketPriceBasedOnType(ticketTypeQueryParam) {
+			const ticketType = document.getElementById("ticket-type").value;
+			const ticketPriceMap = { 0: 6000, 1: 4000, 2: 3000, 3: 2000, 4: 1000 }
+
+			const finalTicketType = ticketTypeQueryParam ?? ticketType;
+
+			document.getElementById("ticket-type").value = finalTicketType;
+
+			// Your logic to calculate the new price based on ticket type and quantity
+			const price = ticketPriceMap[finalTicketType];
+
+			// Update the displayed price
+			document.getElementById("ticket-price").innerHTML = "Rs. " + price;
+		}
+
+		window.onload = function () {
+			// Call the function to update ticket type and price on initial load
+			updateTicketPriceOnLoad();
+		};
+	</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

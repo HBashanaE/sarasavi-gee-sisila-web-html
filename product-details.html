@@ -61,81 +61,115 @@
 						<h1>Purchase Tickets</h1>
 					</header>
 
-					<h2 style="color: brown;">Ticket buying will be updated soon.</h1>
-						<div class="row">
-							<div class="col-md-5">
-								<img src="images/purchase.webp" class="img-responsive" alt="">
-							</div>
+					<h2>1. Get your ticket - Pay through payment portal <p style="color: red;">(The portal will be
+							available soon)</p>
+					</h2>
 
-							<div class="col-md-7">
-								<h2 id="ticket-price">Rs. 6000</h2>
+					<div class="row" style=" pointer-events: none; opacity: 0.4;">
+						<div class="col-md-5">
+							<img src="images/purchase.webp" class="img-responsive" alt="">
+						</div>
 
-								<p></p>
+						<div class="col-md-7">
+							<h2 id="ticket-price">Rs. 6000</h2>
 
-								<div class="row">
-									<div>
-										<label class="control-label">Email</label>
+							<p></p>
 
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<input type="email" name="email" id="email">
-												</div>
+							<div class="row">
+								<div>
+									<label class="control-label">Email</label>
+
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="email" name="email" id="email">
 											</div>
-
 										</div>
-										<p>Verify that the email
-											address you provide is accurate. The tickets will be sent to the email
-											within 7
-											days after the
-											purchase.</p>
-									</div>
-
-									<div class="col-sm-4">
-										<label class="control-label">Choose Tickets</label>
-
-										<div class="form-group">
-											<select id="ticket-type" onchange="updateTicketPrice()">
-												<option value="0">VIP</option>
-												<option value="1">Class A</option>
-												<option value="2">Class B</option>
-												<option value="3">Class C</option>
-												<option value="4">Class D</option>
-											</select>
-										</div>
-
 
 									</div>
+									<p>Verify that the email
+										address you provide is accurate. The tickets will be sent to the email
+										within 7
+										days after the
+										purchase.</p>
+								</div>
 
-									<div class="col-sm-8">
-										<label class="control-label">Quantity</label>
+								<div class="col-sm-4">
+									<label class="control-label">Choose Tickets</label>
 
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<input type="number" name="name" id="quantity" min="0" value="0">
-												</div>
-											</div>
-
-										</div>
-
-										<div class="row">
-											<div class="col-sm-6">
-												<button>Purchase</button>
-											</div>
-										</div>
+									<div class="form-group">
+										<select id="ticket-type" onchange="updateTicketPrice()">
+											<option value="0">VIP</option>
+											<option value="1">Class A</option>
+											<option value="2">Class B</option>
+											<option value="3">Class C</option>
+											<option value="4">Class D</option>
+										</select>
 									</div>
 
 
 								</div>
+
+								<div class="col-sm-8">
+									<label class="control-label">Quantity</label>
+
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="number" name="name" id="quantity" min="0" value="0">
+											</div>
+										</div>
+
+									</div>
+
+									<div class="row">
+										<div class="col-sm-6">
+											<button>Purchase</button>
+										</div>
+									</div>
+								</div>
+
+
 							</div>
 						</div>
+					</div>
 
-						<br>
+					<h2>2. Get your ticket - Pay through bank transfer</h2>
+					<div class="row">
+						<div class="col-md-5">
+							<img src="images/purchase.webp" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7">
+							<div id="ff-compose"></div>
+						</div>
 
-						<p></p>
 
-						<p></p>
+						<script async defer src="https://formfacade.com/include/109209932695947877091/form/1FAIpQLSduSCgznQ
+23zCR37qskolGaH6FylJpGlLR0b9Vu-FfxZdoEgA/classic.js?div=ff-compose"></script>
+					</div>
+
+					<h2>3. Get your ticket at Goda Canteen</h2>
+
+					<div class="row">
+						<div class="col-md-5">
+							<img src="images/purchase.webp" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7">
+							<div>
+								<p>
+									Pay and collect the ticket from 'Goda canteen' from Monday to Saturday (7:00am –
+									6:00pm)
+								</p>
+
+							</div>
+						</div>
+					</div>
+
+					<br>
+
+					<p></p>
+
+					<p></p>
 
 				</div>
 			</section>

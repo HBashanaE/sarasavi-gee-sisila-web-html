@@ -2170,6 +2170,27 @@ body.is-menu-visible #menu .inner {
     max-width: 100vw
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto; /* Creates two columns */
+    gap: 10px; /* Adds some gap between the items */
+}
+
+.grid-item {
+    display: flex;
+    justify-content: space-between; /* Aligns the text to the left and the button to the right */
+}
+
+.grid-item h2, .grid-item span {
+    margin-right: 25px; /* Adds a margin to the right of the text */
+}
+
+.grid-item a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent element */
+}
+
+
 #menu ul.links .dropdown-menu {
     display: flex;
     flex-wrap: wrap;
@@ -2217,6 +2238,8 @@ body.is-menu-visible #menu .inner {
 .modal-header {
     border-color: rgba(255, 255, 255, .1)
 }
+
+
 
 @media (max-width:1199px) {
     form>.fields>.field.quarter {
